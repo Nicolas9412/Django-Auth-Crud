@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html' %} {% block content %}
+<main class="container">
+  <div class="row">
+    <div class="col-md-6 offset-3 my-4">
+      <form class="card card-body" action="/tasks/create" method="post">
+        <h1>Create Task</h1>
+        {{error}} {% csrf_token %} {{form.as_p}}
+        <button class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
